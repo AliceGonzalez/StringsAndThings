@@ -26,11 +26,10 @@ public class StringsAndThings {
 ////    documentation to find the methods you need to use. You will also need to use the StringBuilder class to create the output. You will need to use the System.out.print() method to print out the numbers in the correct format. What’s the “newline” character? You will need to use it to get the output to look like the example.
     public Integer countYZ(String input) {
         int count = 0;
-        for (int i = 0; i < input.length(); i++) {
-            char currentChar = Character.toLowerCase(input.charAt(i));
-            if(currentChar == 'y'  || currentChar == 'z'  &&
-                    (i == input.length() -1 || ! Character.isLetter(input.charAt(i +1)))){
-                count++;
+        String[] inputArray = input.split("[^a-zA-Z]"); {
+            for(String userInput : inputArray) {
+                if(userInput.toLowerCase().trim().endsWith("y") || userInput.toLowerCase().trim().endsWith("z"))
+                    count++;
             }
         }
         return count;
@@ -48,7 +47,8 @@ public class StringsAndThings {
     public String removeString(String base, String remove){
         String result = "";
 
-        return null;
+
+        return result;
     }
 
 //    /**
