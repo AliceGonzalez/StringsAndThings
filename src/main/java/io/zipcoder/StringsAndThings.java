@@ -3,6 +3,8 @@ package io.zipcoder;
 
 import java.util.Arrays;
 
+import static java.util.List.of;
+
 
 /**
  * @author tariq
@@ -45,10 +47,7 @@ public class StringsAndThings {
 //     *           removeString("Hello there", "x") // Should return "Hello there"
 //     */
     public String removeString(String base, String remove){
-        String result = "";
-
-
-        return result;
+        return base.replace(remove, "");
     }
 
 //    /**
@@ -71,7 +70,15 @@ public class StringsAndThings {
 //     *           gHappy("xxggyygxx") // Should return  false
 //     */
     public Boolean gIsHappy(String input){
-        return null;
+        int letter1 = 'g';
+
+        for (int i = 0; i < input.length() -1; i ++){
+                if (input.charAt(i) == letter1 && input.charAt(i + 1) == letter1) {
+                    return true;
+                }
+        }
+        return false;
+
     }
 
 
@@ -82,7 +89,15 @@ public class StringsAndThings {
 //     *            countTriple("xxxabyyyycd") // Should return 3
 //     *            countTriple("a") // Should return 0
 //     */
-    public Integer countTriple(String input){
-        return null;
+    public Integer countTriple(String input) {
+        int tripleCounter = 0;
+
+        int i;
+        for (i = 0; i <= input.length()-2; i++) {
+            if (input.charAt(i) == input.charAt(i + 1) && input.charAt(i) == input.charAt(i + 2)) {
+                tripleCounter++;
+            }
+        }
+        return tripleCounter;
     }
 }
